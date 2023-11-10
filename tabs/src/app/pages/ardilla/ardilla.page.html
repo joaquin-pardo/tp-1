@@ -1,0 +1,58 @@
+<ion-header >
+  <app-header></app-header>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Nombre</ion-label>
+      <ion-input [(ngModel)]="empleado.Nombre" name="nombre" type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Apellido</ion-label>
+      <ion-input [(ngModel)]="empleado.Apellido" name="apellido" type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Edad</ion-label>
+      <ion-input [(ngModel)]="empleado.Edad" name="edad" type="number" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Estado</ion-label>
+      <ion-select [(ngModel)]="empleado.Estado" name="estado" required>
+        <ion-select-option value="Activo">Activo</ion-select-option>
+        <ion-select-option value="Inactivo">Inactivo</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+    
+      <ion-button expand="full" (click)="guardarEmpleado()">Guardar</ion-button>
+
+
+    <ion-grid >
+      <ion-row class="table-header">
+        <ion-col class="table-cell">Nombre</ion-col>
+        <ion-col class="table-cell">Apellido</ion-col>
+        <ion-col class="table-cell">Edad</ion-col>
+        <ion-col class="table-cell">Estado</ion-col> 
+      </ion-row>
+  
+      <ng-container *ngFor="let empleado of listado">
+        <ion-row class="table-row">
+          <ion-col class="table-cell">{{ empleado.Nombre }}</ion-col>
+          <ion-col class="table-cell">{{ empleado.Apellido }}</ion-col>
+          <ion-col class="table-cell">{{ empleado.Edad }}</ion-col>
+          <ion-col class="table-cell">{{ empleado.Estado }}</ion-col>
+        </ion-row>
+      </ng-container>
+    </ion-grid>
+
+
+    <img src="https://i.pinimg.com/550x/84/5f/49/845f495700a1586900fecec229a0f707.jpg">
+
+
+  </ion-content>
+
