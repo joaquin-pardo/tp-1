@@ -2,7 +2,16 @@
 
 <ion-content [fullscreen]="true">
   <ion-content>
-    <img src="https://fotos.perfil.com/2023/02/08/trim/900/900/pancho-el-gato-mas-triste-del-mundo-1506364.jpg">
+    <button [ngStyle]="{'background-color': 'lightblue', 'width': '150px', 'height': '50px'}"
+    (click)="mostrarMensaje()">Boton misterioso</button>
+
+<div *ngIf="mostrarImagen">
+  <img src="https://fotos.perfil.com/2023/02/08/trim/900/900/pancho-el-gato-mas-triste-del-mundo-1506364.jpg" alt="Imagen" />
+</div>
+<br>
+<button (click)="cambiarEstilos()" [ngStyle]="{'background-color': colorFondo, 'width': tamanoBoton, 'height': tamanoBoton, 'margin': margenBoton}">
+  Boton Misterioso Numero dos
+</button>
   </ion-content>
   <ion-header collapse="condense">
     <ion-toolbar>
